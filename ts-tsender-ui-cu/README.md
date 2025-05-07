@@ -1,5 +1,5 @@
 1. Basic React/NextJS app &#x2705;
-2. Connect wallet
+2. Connect wallet &#x2705;
 3. Implement the following function
 
 ```javascript

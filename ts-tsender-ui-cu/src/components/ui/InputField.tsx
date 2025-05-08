@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 type InputFieldProps = {
   label: string;
@@ -6,7 +6,9 @@ type InputFieldProps = {
   value: string;
   type?: string;
   large?: boolean;
-  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLAreaElement>) => void;
+  onChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
 };
 
 export default function InputField({
@@ -21,8 +23,6 @@ export default function InputField({
     large ? "text-lg py-3" : ""
   }`;
 
-  const [tokenAddress, setTokenAddress] = useState("");
-
   return (
     <div>
       {label && (
@@ -33,14 +33,24 @@ export default function InputField({
           {label}
         </label>
       )}
-      <input
-        className={inputClass}
-        id={`input-field-${label}`}
-        type={type}
-        placeholder={placeholder}
-        value={tokenAddress}
-        onChange={(e) => setTokenAddress(e.target.value)}
-      />
+      {large ? (
+        <textarea
+          className={`${inputClass} min-h-32`}
+          id={`input-field-${label}`}
+          placeholder={placeholder}
+          value={value || ""}
+          onChange={onChange}
+        />
+      ) : (
+        <input
+          className={inputClass}
+          id={`input-field-${label}`}
+          type={type}
+          placeholder={placeholder}
+          value={value || ""}
+          onChange={onChange}
+        />
+      )}
     </div>
   );
 }

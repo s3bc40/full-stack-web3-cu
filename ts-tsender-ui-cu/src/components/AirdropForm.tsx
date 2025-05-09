@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import InputField from "@/components/ui/InputField";
 import { chainsToTSender, tsenderAbi, erc20Abi } from "@/constants";
 import { useChainId, useConfig, useAccount } from "wagmi";
 import { readContract } from "@wagmi/core";
+import { calculateTotal } from "@/utils";
 
 export default function AirDropForm() {
   const [tokenAddress, setTokenAddress] = useState("");
@@ -12,6 +13,8 @@ export default function AirDropForm() {
   const chainId = useChainId();
   const config = useConfig();
   const account = useAccount();
+  // it's like `computed` in Vue
+  const total: number = useMemo(() => calculateTotal(amounts), [amounts]);
 
   async function getApprovedAmount(
     tSenderAddress: string | undefined
@@ -41,7 +44,8 @@ export default function AirDropForm() {
     // 4. Show a success message
     const tSenderAddress = chainsToTSender[chainId]["tsender"];
     const approvedAmount = await getApprovedAmount(tSenderAddress);
-    console.log("approvedAmount", approvedAmount);
+
+    // if (result < totalAmountNeed)
   }
 
   return (

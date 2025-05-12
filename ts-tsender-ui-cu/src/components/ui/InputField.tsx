@@ -19,7 +19,7 @@ export default function InputField({
   large = false,
   onChange,
 }: InputFieldProps) {
-  const inputClass = `shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+  const inputClass = `shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline ${
     large ? "text-lg py-3" : ""
   }`;
 
@@ -27,7 +27,7 @@ export default function InputField({
     <div>
       {label && (
         <label
-          className="block text-gray-700 text-sm font-bold mb-2"
+          className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
           htmlFor={`input-field-${label}`}
         >
           {label}

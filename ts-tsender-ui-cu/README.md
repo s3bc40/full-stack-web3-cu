@@ -11,4 +11,5 @@ function airdropERC20(
 )
 ```
 
-4. Deploy to fleek
+4. e2e testing
+5. Deploy to fleek

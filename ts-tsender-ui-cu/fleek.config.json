@@ -1,7 +1,7 @@
 {
   "sites": [
     {
-      "slug": "tinkling-insect-steep",
+      "slug": "wide-napkin-big",
       "distDir": "./out",
       "buildCommand": "npm run build"
     }

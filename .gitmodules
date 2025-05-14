@@ -1,0 +1,9 @@
+[submodule "ts-nft-marketplace-cu/foundry/lib/openzeppelin-contracts"]
+	path = ts-nft-marketplace-cu/foundry/lib/openzeppelin-contracts
+	url = https://github.com/openzeppelin/openzeppelin-contracts
+[submodule "ts-nft-marketplace-cu/foundry/lib/forge-std"]
+	path = ts-nft-marketplace-cu/foundry/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "ts-nft-marketplace-cu/reproduce/lib/forge-std"]
+	path = ts-nft-marketplace-cu/reproduce/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
